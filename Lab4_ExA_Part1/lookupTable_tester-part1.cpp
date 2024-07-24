@@ -162,12 +162,10 @@ void try_to_find(LookupTable& lt, int key)
 
 void more_tests(LookupTable& lt) {
     // Insert using new keys.
-    print(lt); // added in
     cout << "Inserting 3 pairs: " << endl;
     lt.insert(Pair (8002, "Joe Morrison"));
     lt.insert(Pair (8004, "Jack Lewis"));
     lt.insert(Pair (8001, "Tim Hardy"));
-    print(lt); // added in
     cout << "Assert: three data must be in the list: " << endl;
     assert(lt.size() == 3);
     cout << "Okay. Passed. " << endl;
@@ -195,8 +193,8 @@ void more_tests(LookupTable& lt) {
     cout << "\nTest copying: keys should be 8001, and 8002\n";
     print(clt);
     lt.remove(8002);
-    
     //Assignment operator check.
+    
     clt= lt;
     cout << "\nTest assignment operator (key expected be 8001):\n";
     print(clt);

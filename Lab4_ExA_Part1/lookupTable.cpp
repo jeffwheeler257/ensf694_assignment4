@@ -132,11 +132,14 @@ void LookupTable::insert(const Pair& pairA) {
             cursorM = nullptr;
             return;
         }
-        else if (cursorM->pairM.key > pairA.key){
+        else if (cursorM->pairM.key > pairA.key){ // check here
             if (cursorM == headM){
                 LT_Node* new_node = new LT_Node(pairA, nullptr);
                 headM = new_node;
                 new_node->nextM = cursorM;
+                cursorM = nullptr;
+                sizeM++;
+                return;
             }
             LT_Node* new_node = new LT_Node(pairA, nullptr);
             new_node->nextM = cursorM;
