@@ -1,6 +1,6 @@
 /*
  *  lookupTable.cpp
- *  ENSF 694 Lab 4 - Exercise A Part 1
+ *  ENSF 694 Lab 4 - Exercise A Part 2
  *  Created by Jeff Wheeler
  *  Submission date: July 26, 2024
  */
@@ -132,7 +132,7 @@ void LookupTable::insert(const Pair& pairA) {
             cursorM = nullptr;
             return;
         }
-        else if (cursorM->pairM.key > pairA.key){ // check here
+        else if (cursorM->pairM.key > pairA.key){
             if (cursorM == headM){
                 LT_Node* new_node = new LT_Node(pairA, nullptr);
                 headM = new_node;
@@ -214,7 +214,7 @@ void LookupTable::make_empty() {
 }
 
 void LookupTable::display() const {
-        cout << "Key: " << cursorM->pairM.key << ", Data: " << cursorM->pairM.datum << endl;
+        cout << "Key: " << cursorM->pairM.key << ", Data: " << cursorM->pairM.datum.get_label() << endl;
 }
 
 bool LookupTable::isEmpty() const {

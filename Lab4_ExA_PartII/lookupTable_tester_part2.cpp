@@ -10,7 +10,7 @@ void run_test();
 
 int main()
 {
-    if(!freopen("/Users/mahmoodmoussavi/Dropbox/ENSF 694 Labs/Lab3/Lookup Table Part II/Lookup Table/Lookup Table/data-part2.txt", "r", stdin)){
+    if(!freopen("./data-part2.txt", "r", stdin)){
         std::cerr << "Failed to use the input file";
         exit(1);
     }

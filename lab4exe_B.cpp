@@ -1,4 +1,10 @@
-//  ENSF 694 lab 4 Spring 2024 - Exercise B
+/*
+ *  lab4exe_b.cpp
+ *  ENSF 694 Lab 4 - Exercise B
+ *  Created by Mahmood Moussavi
+ *  Completed by Jeff Wheeler
+ *  Submission date: July 26, 2024
+ */
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -11,16 +17,16 @@ struct City {
     char name[30];
 };
 
-void write_binary_file(City cities[], int size, char* filename);
 /* PROMISES: attaches an ofstream object to a binary file named "filename" and
  * writes the content of the array cities into the file.
  */
+void write_binary_file(City cities[], int size, char* filename);
 
-void print_from_binary(char* filename);
 /* PROMISES: attaches an ifstream object to a binary file named "filename" and
  * reads the content of the file (one record at a time and displays it on the
  * screen.
  */
+void print_from_binary(char* filename);
 
 int main() {
     char bin_filename[] = "cities.bin";
@@ -50,8 +56,21 @@ void write_binary_file(City cities[], int size, char* filename){
     stream.close();
 }
 
+/* PROMISES: attaches an ifstream object to a binary file named "filename" and
+ * reads the content of the file (one record at a time and displays it on the
+ * screen.
+ */
 void print_from_binary(char* filename) {
-    /* Studnets must complete the implementaiton of this file. */
+    ifstream stream(filename, ios::in | ios::binary);
+    City a[size];
+
+    for (int i = 0; i < size; i++){
+        stream.read((char*)&a[i], sizeof(City));
+    }
+
+    for (int i = 0; i < size; i++){
+        cout << "Name: " << a[i].name << ", x coordinate: " << a[i].x << ", y coordinate: " << a[i].y << endl;
+    }
 
 }
 

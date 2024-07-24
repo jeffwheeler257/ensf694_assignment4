@@ -1,4 +1,11 @@
-// ENSF 694 Spring 2024 lab4exe_D.cpp
+/*
+ *  lab4exe_D.cpp
+ *  ENSF 694 Lab 4 - Exercise D
+ *  Created by Mahmood Moussavi
+ *  Completed by Jeff Wheeler
+ *  Submission date: July 26, 2024
+ */
+
 
 #include <iostream>
 #include <fstream>
@@ -8,18 +15,18 @@ using namespace std;
 
 #include "matrix.h"
 
-void populate_matrix(Matrix& m, int seed);
 // PROMISES: populates the elements of matrix m with arbitrary double numbers.
 //           using seed to produce different values.
+void populate_matrix(Matrix& m, int seed);
 
-bool not_all_digits(const char* str);
 // REQUIRES: returns true if any charactres in str is not a digit
+bool not_all_digits(const char* str);
 
-void print(const Matrix& m);
 // PROMISES: prints the values of the matrix in tabular format.
+void print(const Matrix& m);
 
-void print_with_sum(const Matrix& m);
 // PROMISES: prints the matrix in tabular format, plus sum of its rows and columns
+void print_with_sum(const Matrix& m);
 
 int main(int argc, const char * argv[]) {
     int row, col;
@@ -50,7 +57,7 @@ int main(int argc, const char * argv[]) {
     cout << "\n\nThe values in matrix m1 are:\n\n";
     print(m1);
     
-#if 0
+#if 1
     Matrix m2 (4, 6);
     populate_matrix(m2, 6);
 
